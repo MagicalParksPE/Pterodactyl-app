@@ -15,21 +15,21 @@
 */
 import 'package:flutter/material.dart';
 
-class AboutPage extends StatefulWidget {
-  @override
-  _AboutPageState createState() => new _AboutPageState();
-}
+class AboutPage extends StatelessWidget {
+  const AboutPage({super.key});
 
-class _AboutPageState extends State<AboutPage> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('About'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('About'),
         backgroundColor: Colors.blue[300],
       ),
-      body: new Center(
-        child: new Text("There will be more", style: new TextStyle(fontSize: 35.0)),
+      body: const Center(
+        child: Text(
+          "About Page",
+          style: TextStyle(fontSize: 35.0),
+        ),
       ),
     );
   }
