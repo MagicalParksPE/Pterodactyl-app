@@ -2,7 +2,7 @@ workflows:
   ios-build:
     name: iOS Build
     environment:
-      flutter: stable
+      flutter: "2.10.5"
       xcode: latest
       cocoapods: default
       vars:
