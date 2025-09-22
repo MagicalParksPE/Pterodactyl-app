@@ -1,0 +1,22 @@
+workflows:
+  ios-build:
+    name: iOS Build
+    environment:
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+      vars:
+        BUNDLE_ID: "com.example.myapp" # change this to your own bundle identifier
+    scripts:
+      - name: Get Flutter packages
+        script: flutter pub get
+      - name: Build iOS app (release)
+        script: |
+          flutter build ios --release --no-codesign
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - build/ios/iphoneos/*.app
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com
